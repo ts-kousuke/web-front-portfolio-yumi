@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="robots" content="noindex" />
     <title>Yumi's Portfolio</title>
@@ -11,7 +12,6 @@
       href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
     />
   </head>
-
   <body>
     <img
       src="./assets/decorations/lt.svg"
@@ -23,15 +23,25 @@
       alt="背景デザイン画像2"
       class="page-bg-icon page-bg-icon-rb"
     />
-
     <div class="page-cover bg-3 text-dark">
       <h1 class="page-title text-1">Portfolio</h1>
+
+      <!-- <div class="card-cover bg-white">
+        <h2 class="card-title-cover bg-2 text-light">
+          <div class="card-title">English Title</div>
+          <div class="card-subtitle">日本語タイトル</div>
+          <div class="card-title-line"></div>
+        </h2>
+        <div class="card-contents">内容</div>
+      </div> -->
+
+      <!-- <div style="height: 20px"></div> -->
 
       <div class="card-cover bg-white">
         <h2 class="card-title-cover bg-2 text-light">
           <div class="card-title">Self-Introduction</div>
           <div class="card-subtitle">自己紹介</div>
-          <div style="height: 2px" class="bg-darken"></div>
+          <div class="card-title-line"></div>
         </h2>
         <div class="card-contents">
           <div class="card-basic-info-layout">
@@ -59,22 +69,14 @@
           </div>
         </div>
         <div class="card-contents">
-          <span
-            class="bg-1 text-light"
-            style="font-size: 0.8rem; font-weight: 500; padding: 4px"
-            >自己紹介</span
-          >
+          <span class="card-basic-info-label bg-1 text-light">自己紹介</span>
           <p>
             　はじめまして、須賀 優美
             といいます。このサイトは、私の趣味やスキルなどを紹介するポートフォリオです。
             このポートフォリオが、Web の
             初めての制作物です。どうぞご覧ください。
           </p>
-          <span
-            class="bg-1 text-light"
-            style="font-size: 0.8rem; font-weight: 500; padding: 4px"
-            >重要</span
-          >
+          <span class="card-basic-info-label bg-1 text-light">重要</span>
           <p>
             　このページは Web 制作の学習のためのページです。
             掲載されている情報はすべて架空の設定であり、実際とは異なります。
@@ -103,7 +105,7 @@
         <h2 class="card-title-cover bg-2 text-light">
           <div class="card-title">Hobby</div>
           <div class="card-subtitle">趣味</div>
-          <div style="height: 2px" class="bg-darken"></div>
+          <div class="card-title-line"></div>
         </h2>
         <div class="card-contents">
           　旅行と写真を取ることが趣味です。スマートフォンで気軽に撮影したものです。
@@ -158,7 +160,7 @@
         <h2 class="card-title-cover bg-2 text-light">
           <div class="card-title">Skill</div>
           <div class="card-subtitle">スキル</div>
-          <div style="height: 2px" class="bg-darken"></div>
+          <div class="card-title-line"></div>
         </h2>
         <div class="card-contents tile-grid-cover">
           <div class="card-tile">
@@ -310,7 +312,7 @@
         <h2 class="card-title-cover bg-2 text-light">
           <div class="card-title">My Work</div>
           <div class="card-subtitle">制作物</div>
-          <div style="height: 2px" class="bg-darken"></div>
+          <div class="card-title-line"></div>
         </h2>
         <div class="card-contents">
           <div class="work">
@@ -485,7 +487,7 @@
         <h2 class="card-title-cover bg-2 text-light">
           <div class="card-title">Licence</div>
           <div class="card-subtitle">帰属</div>
-          <div style="height: 2px" class="bg-darken"></div>
+          <div class="card-title-line"></div>
         </h2>
         <div class="card-contents">
           <ul>
@@ -524,12 +526,25 @@
       <div style="height: 40px"></div>
 
       <footer class="footer-cover bg-2 text-light">
-        <div style="height: 4px" class="bg-darken"></div>
-        <div class="card-contents">&copy; Yumi's web page.</div>
+        <div style="height: 4px; background-color: rgba(0, 0, 0, 0.1)"></div>
+        <div class="footer-contents">&copy; Yumi's web page.</div>
       </footer>
     </div>
+
     <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
     <script>
+      var swiper = new Swiper(".swiper-area", {
+        direction: "horizontal",
+        spaceBetween: 30,
+        autoplay: { delay: 10 * 1000, disableOnInteraction: false },
+        loop: true,
+        pagination: { el: ".swiper-pagination" },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+
       var TOP_BAR_OFFSET = 48;
       function scroller(query) {
         var elements = document.querySelectorAll(query);
@@ -547,18 +562,6 @@
           behavior: "smooth",
         });
       }
-
-      var swiper = new Swiper(".swiper-area", {
-        direction: "horizontal",
-        spaceBetween: 30,
-        autoplay: { delay: 10 * 1000, disableOnInteraction: false },
-        loop: true,
-        pagination: { el: ".swiper-pagination" },
-        navigation: {
-          nextEl: ".swiper-button-next",
-          prevEl: ".swiper-button-prev",
-        },
-      });
     </script>
   </body>
 </html>
